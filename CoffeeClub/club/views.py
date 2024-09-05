@@ -25,4 +25,5 @@ def createuser(request):
 
 def showuser(request):
     user_obj = User.objects.all()
+    print(user_obj)
     return render(request,'home.html',{'user_obj':user_obj})

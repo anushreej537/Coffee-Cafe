@@ -218,25 +218,28 @@
 
 <h1 style="text-align: center;">Pricing card</h1>
 <div class="row slideanim" style="margin:12px">
-    {% comment %} {% for user in user_obj %} {% endcomment %}
+    {% for user in user_obj %} 
         <div class="col-sm-4 col-xs-12">
             <div class="panel panel-default text-center">
                 <div class="panel-heading">
                     <h1>{{ user.name }}</h1>
+                    {% comment %} <h1>{{ user_obj.name }}</h1> {% endcomment %}
+
                 </div>
                 <div class="panel-body">
-                    {% for feature, value in coffee.features.items %}
-                        <p><strong>{{ user.email }}</strong> {{ user.coffee }}</p>
-                    {% endfor %}
+
+                        <p><strong>{{ user.email }}</strong> {{ user.coffee.coffee_name }}</p>
+                        <h3>${{ user.coffee.price }}</h3>
+              
                 </div>
-                <img src={{coffee.coffee_name}} style="width: 80%; height: 300px; object-fit: cover;">
+                {% comment %} <img src={{user.}} style="width: 80%; height: 300px; object-fit: cover;"> {% endcomment %}
                 <div class="panel-footer">
-                    <h3>${{ coffee.price }}</h3>
-                    <button class="btn btn-lg">Sign Up</button>
+                    
+                   <button class="btn btn-lg">Sign Up</button>
                 </div>
             </div>
         </div>
-    {% comment %} {% endfor %} {% endcomment %}
+    {% endfor %} 
 </div>
 
 

@@ -412,7 +412,7 @@
             onfocusout="defocused(this)" aria-label="Default select example" name='coffee'>
             <option class="fw-lighter" selected>Coffee name</option>
             {% for coffee in coffee_obj%}
-            <option value="{{coffee.id}}">{{coffee.coffee_name}} {{coffee.price}}</option>
+            <option value="{{coffee.id}}">{{coffee.coffee_name}} {{coffee.price}} </option>
             {% endfor %}
           </select>
         {% comment %} </div> {% endcomment %}
