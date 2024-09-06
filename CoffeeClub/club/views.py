@@ -27,3 +27,17 @@ def showuser(request):
     user_obj = User.objects.all()
     print(user_obj)
     return render(request,'home.html',{'user_obj':user_obj})
+
+def addtocart(request):
+    if request.method == 'POST':
+        id = request.POST['id']
+        # coffee_name = request.POST['name']
+        # price = request.POST['price']
+        # quantity = request.POST['quantity']
+        # image = request.POST['image']
+        obj = Coffee.objects.filter(id = id)
+        print(obj)
+        
+        return render(request,'addtocart.html',{'obj':obj})
+    else:
+        return render(request,'base.html')

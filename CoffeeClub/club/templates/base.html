@@ -363,9 +363,12 @@
 <!-- Container (Pricing Section) -->
 <h1 style="text-align: center;">Pricing card</h1>
 <div class="row slideanim" style="margin:12px">
+  <form  action='/addtocart/' method='post'>
+  {% csrf_token%}
     {% for coffee in coffee_obj %}
         <div class="col-sm-4 col-xs-12">
             <div class="panel panel-default text-center">
+              <input type="hidden" name="id" value="{{ coffee.id }}" />
                 <div class="panel-heading">
                     <h1>{{ coffee.coffee_name }}</h1>
                 </div>
@@ -378,11 +381,12 @@
                 <div class="panel-footer">
                     <h3>${{ coffee.price }}</h3>
                     <h4>per month{{coffee.quantity}}</h4>
-                    <button class="btn btn-lg">Sign Up</button>
+                    <button class="btn btn-lg">Add To Cart</button>
                 </div>
             </div>
         </div>
     {% endfor %}
+      </form>
 </div>
 
 <!-- Container (Contact Section) -->

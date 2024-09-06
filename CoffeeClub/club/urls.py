@@ -4,6 +4,7 @@ from club import views
 urlpatterns = [
     path('',views.index),
     path('createuser/',views.createuser),
-    path('showuser/',views.showuser)
+    path('showuser/',views.showuser),
+    path('addtocart/',views.addtocart),
 ]
 
